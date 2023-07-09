@@ -1,0 +1,56 @@
+﻿@model Jinish_Assignement1
+@{
+    ViewData["Title"] = "BMI Calculator";
+}
+
+<html>
+    <head>
+     <link href="~/css/site.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="title" style='color:red'>@ViewBag.title</h1>
+
+        
+        
+        <form method="post">
+        <div class=" row col-12">
+            <span><label >Enter Your Weight :</label>
+                <input asp-for="Weight_236" placeholder="Weight in Pound"/>
+            </span>
+            
+            <span asp-validation-for="Weight_236" style='color:red'></span>
+        </div>
+        <div class=" row col-12">
+            <span><label>Enter Your Height :</label>
+                <input asp-for="Height_236" placeholder="Height in Inches" />
+            </span>
+            <span asp-validation-for="Height_236" style='color:red'></span>
+        </div>
+        <div class=" row col-12">
+            <span>
+            <label >Your Body Mass Index is :</label>
+            <input  value="@ViewBag.BMI_236"/>
+            </span>
+        </div>
+        <div class="row ">
+            <span class="butt ">
+                <button type="submit" class="btn btn-primary">
+                    Calculate
+                </button>
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary">Clear</a>
+                   </span>
+        </div>
+    
+        </form>
+        <div class="discription row justify-content-start">
+            <p>BMI Index range according for health</p>
+            <p>UnderWeight : =<18.5</p>
+            <p>Normal : 18.5-24.9</p>
+        <p>OverWeight : 25-29.9</p>
+        <p>Obesity : >=30</p>
+
+        </div>
+        </body>
+
+</html>
